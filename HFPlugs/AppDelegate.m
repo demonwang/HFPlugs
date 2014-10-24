@@ -7,16 +7,22 @@
 //
 
 #import "AppDelegate.h"
+#import "HFLocalManager.h"
+#import "HFServerManager.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    HFLocalManager * localmanager;
+    NSThread * beatThread ;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    localmanager = [HFLocalManager getInstance];
     return YES;
 }
 
@@ -36,12 +42,19 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    beatThread = [[NSThread alloc]initWithTarget:self selector:@selector(beat) object:nil];
+    [beatThread start];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+
+}
+-(void)beat{
+    [localmanager startEventRecv];
+     [localmanager startBeat];
+     NSLog(@"beat End");
 }
 
 #pragma mark - Core Data stack

@@ -11,5 +11,4 @@
 @interface HFServerManager : NSObject
 
 +(HFServerManager*)getInstance;
-+()
 @end

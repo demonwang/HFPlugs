@@ -41,13 +41,20 @@ static HFLocalManager * localManager;
     return self;
 }
 -(void)startBeat{
-    [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(sendBeat) userInfo:nil repeats:YES];
+
+    while (YES) {
+       // [NSTimer scheduledTimerWithTimeInterval:SERVER_TIMEOUT/1000 target:self selector:@selector(sendBeat) userInfo:nil repeats:NO];
+        [self sendBeat];
+        sleep(SERVER_TIMEOUT/100);
+    }
 }
 -(void)sendBeat{
     NSData *data =  [NSData toData:DATA_LOCAL_BEAT];
     [udpsock sendData:data toHost: [self localBroadCastIP] port:LOCAL_PORT withTimeout:SERVER_TIMEOUT/1000 tag:-1];
+    NSLog(@"send beat %@",DATA_LOCAL_BEAT);
 }
 -(void)startEventRecv{
+     NSLog(@"start recv");
     NSError *err = [[NSError alloc]init];
     [udpsock beginReceiving:&err];
 }
@@ -66,7 +73,7 @@ static HFLocalManager * localManager;
 -(void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
 
     NSString * msg = [data hexString];
-    NSLog(msg);
+    NSLog(@"%@",msg);
 }
 
 
@@ -98,8 +105,8 @@ static HFLocalManager * localManager;
         }
     }
     freeifaddrs(interface);
+    NSLog(@"local BroadCast %@",address);
     return address;
-    
 }
 
 

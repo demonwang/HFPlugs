@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "NetWorkUtil.h"
 
 @interface ViewController ()
+- (IBAction)testbuttonPress:(id)sender;
 
 @end
 
@@ -24,4 +26,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)testbuttonPress:(id)sender {
+    [NetWorkUtil udpsendSync:@"nihao"];
+}
 @end

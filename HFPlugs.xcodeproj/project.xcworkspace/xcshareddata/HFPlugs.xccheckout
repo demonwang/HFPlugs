@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>95C30DF2-F76D-4C0E-9BB0-9881FDF37100</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HFPlugs</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E0F97C95D952C897430DDE28FD8B2CC60AC484FF</key>
+		<string>https://github.com/demonwang/HFPlugs.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HFPlugs.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E0F97C95D952C897430DDE28FD8B2CC60AC484FF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/demonwang/HFPlugs.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E0F97C95D952C897430DDE28FD8B2CC60AC484FF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E0F97C95D952C897430DDE28FD8B2CC60AC484FF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HFPlugs</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -16,7 +16,7 @@
 
 
 +(HFLocalManager*)getInstance;
--(void)sendBeat;
+-(void)startBeat;
 -(void)startEventRecv;
 -(void)registerEvent:(id<EventDelegate>)del;
 -(void)unregisterEvent:(id<EventDelegate>)del;
